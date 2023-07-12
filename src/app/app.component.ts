@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularproj';
+  title = 'Petzania Animal Clinic';
+  address = 'BGC Taguig';
+
+  constructor(private router: Router) {}
+
+  goHome() {
+    localStorage.clear();
+    this.router.navigate(['']);
+  }
 }
